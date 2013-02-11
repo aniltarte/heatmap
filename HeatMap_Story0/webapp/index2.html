@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>HeatMap</title>
+
+    <!-- include libraries -->
+    <script type="text/javascript" src="lib/ObjectOrientedSupport.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="lib/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="lib/knockout.js"></script>
+    <script type="text/javascript" src="lib/ObjectOrientedSupport.js"></script>
+    <script type="text/javascript" src="lib/ColorCodeCalculator.js"></script>
+
+    <!-- include source files -->
+    <LINK rel="stylesheet" href="resources/css/heatmap.css" type="text/css">
+    <script type="text/javascript" src="src/ee/heatmap/Container.js"></script>
+    <script type="text/javascript" src="src/ee/heatmap/HeatmapApplication.js"></script>
+    <script type="text/javascript" src="src/ee/heatmap/Channel.js"></script>
+    <script type="text/javascript" src="src/ee/heatmap/ApplicationStarter.js"></script>
+
+    <script type="text/javascript" src="spec/ee/heatmap/ChannelForTest.js"></script>
+
+
+</head>
+<body>
+    <div class="header-holder">
+        <span class="header-image"><img src="resources/images/EE.png"/></span>
+        <span><h2>Heat Map</h2></span>
+        <hr>
+    </div>
+
+    <div class="container">
+
+        <div data-bind="foreach:instruments">
+            <div class="tileBox">
+                <div class="instrument-tile">
+                    <div>Symbol : <span data-bind="text:symbol"></span></div>
+                    <div>Name : <span data-bind="text:name"></span></div>
+                    <div>Change : <span data-bind="text:change"></span>%</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
